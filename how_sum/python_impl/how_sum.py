@@ -1,3 +1,4 @@
+from functools import lru_cache
 
 solution = []
 
@@ -76,6 +77,24 @@ def how_sum_memo(target, nums):
 
     return None
 
+
+
+@lru_cache(maxsize=10000)
+def how_sum_cache(target, nums):
+   # global short
+    if target == 0:
+        return []
+    if target < 0:
+        return None
+    for element in nums:
+        reminder = target-element
+        reminder_combination = how_sum(reminder, nums)
+        if reminder_combination != None:
+            solution.append(element)
+            print(f"solution {solution} & element is {element}")
+            return solution
+            # if len(short)==
+            #     print("short")
 
 #print(memo_how_sum(7, [2, 3]))
 # solution.clear()
