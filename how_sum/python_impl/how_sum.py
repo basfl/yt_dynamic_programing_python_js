@@ -14,6 +14,7 @@ def how_sum(target, nums):
         reminder = target - element
 
         reminderResult = how_sum(reminder, nums)
+        print(reminderResult)
         if(isinstance(reminderResult, list)):
             solution.append(element)
             return solution
@@ -76,9 +77,9 @@ def how_sum_memo(target, nums):
     return None
 
 
-print(memo_how_sum(7, [2, 3]))
+#print(memo_how_sum(7, [2, 3]))
 # solution.clear()
-# print(how_sum(7, [5, 3, 4, 7]))
+print(how_sum(7, [5, 3, 4, 7]))
 # print(how_sum(7, [2, 4]))
 # solution.clear()
 # print(how_sum(8, [2, 3, 5]))
